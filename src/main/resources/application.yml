@@ -12,9 +12,9 @@ spring:
       ddl-auto: create
 
   datasource:
-    url: jdbc:mysql://localhost:3306/linkit_test_db
-    username: root
-    password: kk040802
+    url: jdbc:mysql://linkit-dev.cbew06km0jxq.ap-northeast-1.rds.amazonaws.com:3306/linkit_dev_db
+    username: linkit_root
+    password: fldpwhdfldzlt!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   flyway:

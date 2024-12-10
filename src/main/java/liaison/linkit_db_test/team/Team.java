@@ -22,15 +22,9 @@ public class Team
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "team_id")
     private Long id;
 
     @OneToOne
     @JoinColumn(name = "team_profile_id")
     private TeamProfile teamProfile;
-
-
-    public Team(Long id) {
-        this.id = id;
-    }
 }
