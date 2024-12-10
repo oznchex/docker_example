@@ -25,10 +25,6 @@ public class Team
     @Column(name = "team_id")
     private Long id;
 
-    // TeamMember와 다대일 관계
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TeamMember> teamMembers = new ArrayList<>();
-
     @OneToOne
     @JoinColumn(name = "team_profile_id")
     private TeamProfile teamProfile;
