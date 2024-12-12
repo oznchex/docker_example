@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: local    # 디폴트로 로드
+    group:
+      local: local, common, secret
+
+server:
+  env: local
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+  serverAddress: localhost
+
+serverName: local_server
+
+---
