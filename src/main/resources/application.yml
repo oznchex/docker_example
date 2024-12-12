@@ -1,23 +1,28 @@
 spring:
-  jpa:
-    database: mysql
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    properties:
-      hibernate:
-        default_batch_fetch_size: 100
-        format_sql: true
-        use_sql_comments: true
-        show_sql: false
-    hibernate:
-      ddl-auto: create
+  profiles:
+    active: local    # 디폴트로 로드
+    group:
+      local: local, common, secret
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/linkit_test_db
-    username: root
-    password: kk040802
-    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  env: local
 
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
-    baseline-version: 0
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+server:
+  port: 8080
+  serverAddress: localhost
+
+serverName: local_server
+
+---
